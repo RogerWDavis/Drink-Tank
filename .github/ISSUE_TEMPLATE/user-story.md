@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-As a **role** I can **capability** so that **recieved benefit**
+As a **role** I can **capability** so as to **recieved benefit**
 # Acceptance Criteria
 * First criteria
 * Second criteria
