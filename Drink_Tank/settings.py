@@ -37,12 +37,6 @@ ALLOWED_HOSTS = [ '8000-rogerwdavis-drinktank-2ndudugpxhw.ws-eu104.gitpod.io', '
 
 # Application definition
 
-jls_extract_var = 'recipes'
-def jls_extract_def():
-    return jls_extract_var
-
-
-jls_extract_var = 'django_summernote'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
