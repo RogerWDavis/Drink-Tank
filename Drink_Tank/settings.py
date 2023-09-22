@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'cloudinary',
 
     # local apps
-    'recipes'
+    'recipes',
 ]
 
 MIDDLEWARE = [
@@ -92,9 +92,7 @@ WSGI_APPLICATION = 'Drink_Tank.wsgi.application'
 #   }
 #}
 
- DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
- }
+DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
