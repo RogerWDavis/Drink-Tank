@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 
 class Recipe(models.Model):
     title = models.CharField(max_length=50, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, default='uuid.uuid1')
+    slug = models.SlugField(max_length=200, unique=True, default='')
     ingredients = models.TextField(max_length=250, default='')
     description = models.TextField()
 
