@@ -1,1 +1,1 @@
-web: gunicorn Drink_Tank.wsgigit 
+web: gunicorn Drink_Tank.wsgi
