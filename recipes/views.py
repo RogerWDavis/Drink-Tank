@@ -14,7 +14,6 @@ from .models import Recipe
 from .forms import RecipeForm
 
 
-
 class Recipes(ListView):
 
     template_name = "index.html"
