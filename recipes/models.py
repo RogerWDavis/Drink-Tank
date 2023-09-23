@@ -10,7 +10,7 @@ class Recipe(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     ingredients = models.TextField(max_length=250, default='')
     content = models.TextField()
-
+    image = models.ImageField(upload_to='ad_pictures', default='')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Recipe")
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(default=True)

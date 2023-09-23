@@ -1,108 +1,365 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# We Love Whiskey
 
-Welcome Roger Davis,
+We Love Whiskey  is a fictional recipe sharing site that allows bartenders and whiskey enthsiasts to join a community and share their best whiskey recioes. It allowy users to browse, like, upload, edit and delete their favorite whiskey recipes. Its simple and easy to use.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* User-Experience-Design
+ * The-Strategy-Plane
+   * Site-Goals
+   * Agile Planning
+     * Epics
+     * User Stories
+ * The-Scope-Plane
+ * The-Structure-Plane
+   * Features
+   * Features Left To Implement
+ * The-Skeleton-Plane
+   * Wireframes
+   * Database-Design
+   * Security
+ * The-Surface-Plane
+   * Design
+   * Colour-Scheme
+   * Typography
+   * Imagery
+ * Technolgies
+ * Testing
+ * Deployment
+   * Version Control
+   * Heroku Deployment
+   * Run Locally
+   * Fork Project
+ * Credits
 
-## Gitpod Reminders
+ ## User Experience Design
+ ### The Strategy Plane
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+ The site is aimed to help whiskey enthusiasts to easily share whiskey recipes on the website, and find recipes that they may never have tried before.
 
-`python3 -m http.server`
+### Agile Planning
 
-A blue button should appear to click: _Make Public_,
+This project was developed using agile methodologies by delivering small features in incremental sprints. There were 3 sprints in total, spaced out evenly over four weeks.
 
-Another blue button should appear to click: _Open Browser_.
+All projects were assigned to epics, prioritized under the labels, Must have, should have, could have. They were assigned to sprints and story pointed according to complexity. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice to have features being added should there be capacity.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The Kanban board was created using github projects and can be located here and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
 
-A blue button should appear to click: _Make Public_,
+![kanban board](media/kanban.PNG)
 
-Another blue button should appear to click: _Open Browser_.
+#### Epics
+The project had 7 main Epics (milestones):
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+##### EPIC 1 - Base Setup
 
-To log into the Heroku toolbelt CLI:
+The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+##### EPIC 2 - Site Navigation
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The site navigation epic handles functions associated with the user navigation of the site.
 
-------
+##### EPIC 3 - Authentication Epic
 
-## Release History
+The authentication epic is for all stories related to the registration, login and authorization of views. This epic provides critical functionality and value as without it the staff would not be able to managed the bookings securely without regular site visitors also being able to see and perform actions.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+##### EPIC 4 - Deployment Epic
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+This epic is for all stories related to deploying the app to heroku so that the site is live for staff and customer use.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+##### EPIC 5 - Documentation
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### EPIC 1 - Base Setup
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+As a developer, I need to create the base.html page and structure so that other pages can reuse the layout
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+As a developer, I need to create static resources so that images, css and javascript work on the website
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+As a developer, I need to set up the project so that it is ready for implementing the core features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+As a developer, I need to create the footer with social media links and contact information
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### EPIC 2 - Site Navigation
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+As a developer, I need to create the navbar so that users can navigate the website from any device
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+As a developer, I need to implement links throughout the site
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+As a user, I would like a home page so that I can view recipes
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### EPIC 3 - Authentication Epic
 
-------
+As a developer, I need to implement allauth so that users can sign up and have access to the websites features
 
-## FAQ about the uptime script
+As a user, I want to register an account so that I can use member functionality
 
-**Why have you added this script?**
+As a site owner, I would like the allauth pages customized to that they fit in with the sites styling
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### EPIC 4 - Deployment Epic
 
-**How will this affect me?**
+As a developer, I need to set up whitenoise so that my static files are served in deployment
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+As a developer, I need to deploy the project to heroku so that it is live for customers
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+#### EPIC 5 - Documentation
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+ Tasks:
 
-**So….?**
+* Complete readme documentation
+* Complete testing documentation write up
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### The Scope Plane
 
-**Can I opt out?**
+* Responsive Design - Site should be fully functional on all devices from 320px up
+* Hamburger menu for mobile devices
+* Ability to perform CRUD functionality on Menus and Bookings
+* Restricted role based features
+* Home page with basic site information
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### The Structure Plane
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### Features
 
-**Anything more?**
+User Story: As a **site user** I can **view a paginated list of recipes** so as to **pick which recipe I wish to view**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+# Acceptance Criteria
+* Recipes clearly displayed on landing page
+* Clicking on a recipe opens it on a dedicated page
 
----
 
-Happy coding!
+## Tasks
+- [ ] Create view
+- [ ] Create template
+- [ ] Create model
+
+
+User Story: As a **site user** I can **browse recipes by whiskey sort** so as to **find recipes with my preferred whiskey**
+# Acceptance Criteria
+* Dropdown in navbar with whiskey sorts
+* Landing pages with whiskey recipes according to sort
+
+
+## Tasks
+- [ ] Create views
+- [ ] Create urls
+- [ ] Link to homepage
+
+
+User Story: As a **site admin** I can **create, update and delete recipes** so as to **manage site content**
+
+# Acceptance Criteria
+* Site admin user creation
+* Site admin functionality
+
+
+## Tasks
+- [ ] Create admin user in Django
+- [ ] Create recipes
+- [ ] Edit recipes
+
+
+User Tory: As a **site admin** I can **approve or dissaprove recipes** so as to **filter unwanted or irrelevant content**
+
+# Acceptance Criteria
+* Admin can see user generated content
+* Admin can decide which content is visable to user
+
+## Tasks
+- [ ] First task
+- [ ] Second task
+- [ ] Third task
+
+
+User Story: As a **site user** I can **view a recipe list** so as to **select a recipe to view**
+
+# Acceptance Criteria
+* Viewer can go from landing page to recipe list page
+* Recipes displayed asthetically on page
+
+
+## Tasks
+- [ ] Create view
+- [ ] Create url
+- [ ] Link to Home Page
+
+
+User Story: As a **site user** I can **create, update and delete recipes** so as to **interact with community**
+
+# Acceptance Criteria
+* User can create recipes
+* User can edit recipes
+* User can delete recipes
+
+## Tasks
+- [ ] Create user profiles
+- [ ] Assign functionality
+
+
+User Story: As a **site user** I can **create an account** so as to **create, update and delete recipes**
+
+# Acceptance Criteria
+* User can login and log out
+* User can create, update and delete recipes
+
+
+## Tasks
+- [ ] Create user app
+- [ ] Create registration form
+- [ ] Create "logged in" view with user functionality
+- [ ] Create "logged in" url
+- [ ] Create "logged in" and "logged out" messages
+
+
+User Story: As a **site user** I can **open a recipe** so as to **view it in detail**
+
+# Acceptance Criteria
+* Clicking a recipe opens a dedicated page
+* Details displayed asthetically
+
+
+## Tasks
+- [ ] Create View
+- [ ] Create Url
+
+
+User Story: As a **Site User / Admin** I can **view the number of likes on each post** so as to **see which is the most popular or viral**
+
+# Acceptance Criteria
+* Display # of likes
+
+## Tasks
+- [ ] Create like button
+- [ ] Count likes
+- [ ] Display # of likes asthetically
+
+
+User Story: As a **site user** I can **like and unlike content** so as to **interact with community**
+
+# Acceptance Criteria
+* Like and Unlike button displayed
+* User can interact with buttons
+
+## Tasks
+- [ ] Create Buttons
+- [ ] Count Likes/Unlikes
+- [ ] Display Likes/Unlikes
+
+
+
+### The Skeleton Plane
+
+#### Wireframes
+
+![Wireframe](media/wirepage1.PNG)
+![Wireframe](media/wirepage2.PNG)
+![Wireframe](media/wirepage4.PNG)
+![Wireframe](media/wirepage5.PNG)
+![Wireframe](media/wirepage6.PNG)
+
+
+#### Database-Design
+
+The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the heart of the application.
+
+![kanban board](media/erd.pgn.PNG)
+
+#### Security
+
+Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any user restricted functionality, user edit/delete functionality listed in the features was secured using this method.
+
+Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+
+
+#### Technolgies
+* HTML
+  * The structure of the Website was developed using HTML as the main language.
+* CSS
+  * The Website was styled using custom CSS in an external file.
+* JavaScript
+  * JavaScript was used to make the custom slider on the menu page change and the bootstrap date picker.
+* Python
+  * Python was the main programming language used for the application using the Django Framework.
+* Visual Studio Code
+  * The website was developed using Visual Studio Code IDE
+* GitHub
+  * Source code is hosted on GitHub
+* Git
+  * Used to commit and push code during the development of the Website
+* Favicon.io
+  * favicon files were created at https://favicon.io/favicon-converter/
+* balsamiq
+  * wireframes were created using balsamiq from https://balsamiq.com/wireframes/desktop/#
+* Python Modules Used
+
+#### Python Modules Used
+* Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used for the classes to create, read, update and delete
+* Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and test user is authorized to perform actions
+* messages - Used to pass messages to the toasts to display feedback to the user upon actions
+* timedelta, date - Date was used in order to search for objects by date and timedelta for searching date ranges
+
+
+#### External Python Modules
+
+* cloudinary==1.29.0 - Cloundinary was set up for use but no custom uploads were made, settings remain for future development
+* crispy-bootstrap5==0.6 - This was used to allow bootstrap5 use with crispy forms
+* dj-database-url==0.5.0 - Used to parse database url for production environment
+* dj3-cloudinary-storage==0.0.6 - Storage system to work with cloudinary
+* Django==4.0.5 - Framework used to build the application
+* django-allauth==0.51.0 - Used for the sites authentication system, sign up, sign in, logout, password resets ect.
+* django-crispy-forms==1.14.0 - Used to style the forms on render
+* gunicorn==20.1.0 - Installed as dependency with another package
+* psycopg2==2.9.3 - Needed for heroku deployment
+* python3-openid==3.2.0 - Installed as dependency with another package
+
+
+### Deployment
+
+#### Version Control
+
+The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘Drink-Tank’.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+git add <file> - This command was used to add the file(s) to the staging area before they are committed.
+
+git commit -m “commit message” - This command was used to commit changes to the local repository queue ready for the final step.
+
+git push - This command was used to push all committed code to the remote repository on github.
+
+Heroku Deployment
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+Navigate to heroku and create an account
+Click the new button in the top right corner
+Select create new app
+Enter app name
+Select region and click create app
+Click the resources tab and search for Heroku Postgres
+Select hobby dev and continue
+Go to the settings tab and then click reveal config vars
+Add the following config vars:
+SECRET_KEY: (Your secret key)
+DATABASE_URL: (This should already exist with add on of postgres)
+EMAIL_HOST_USER: (email address)
+EMAIL_HOST_PASS: (email app password)
+CLOUNDINARY_URL: (cloudinary api url)
+Click the deploy tab
+Scroll down to Connect to GitHub and sign in / authorize when prompted
+In the search box, find the repositoy you want to deploy and click connect
+Scroll down to Manual deploy and choose the main branch
+Click deploy
+The app should now be deployed.
+
+The live link can be found :[here](https://drink-tank-f365b9a8022a.herokuapp.com/) Live Site
+
+Run Locally
+Navigate to the GitHub Repository you want to clone to use locally:
+
+Click on the code drop down button
+Click on HTTPS
+Copy the repository link to the clipboard
+Open your IDE of choice (git must be installed for the next steps)
+Type git clone copied-git-url into the IDE terminal
+The project will now have been cloned on your local machine for use.

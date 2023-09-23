@@ -43,7 +43,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
 
 class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
  
-    template_name = 'recipes/edit_recipe.html'
+    template_name = 'redit_recipe.html'
     model = Recipe
     form_class = RecipeForm
     success_url = '/recipes/'

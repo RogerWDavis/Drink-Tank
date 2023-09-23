@@ -1,5 +1,4 @@
 from django import forms
-from djrichtextfield.widgets import RichTextWidget
 from .models import Recipe
 
 
@@ -9,22 +8,18 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields = [
             "title",
-            "description",
+            "content",
             "ingredients",
-            "image",
-            "image_alt",
         ]
 
-        ingredients = forms.CharField(widget=RichTextWidget())
+        ingredients = forms.CharField()
 
         widget = {
-            "description": forms.Textarea(attrs={"rows": 5}),
+            "content": forms.Textarea(),
         }
 
         labels = {
             "title": "Recipe Title",
-            "description": "Description",
+            "content": "Content",
             "ingredients": "Recipe Ingredients",
-            "image": "Recipe Image",
-            "image_alt": "Describe Image",
         }
