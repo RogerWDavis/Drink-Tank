@@ -14,9 +14,10 @@ from .models import Recipe
 from .forms import RecipeForm
 
 
+
 class Recipes(ListView):
 
-    template_name = "recipes.html"
+    template_name = "index.html"
     model = Recipe
     context_object_name = "recipes"
     recipes = self.model.objects.all()
