@@ -30,9 +30,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = True
 
-ALLOWED_HOSTS = [ '8000-rogerwdavis-drinktank-2ndudugpxhw.ws-eu104.gitpod.io', 'drink-tank-f365b9a8022a.herokuapp.com']
+ALLOWED_HOSTS = [ '8000-rogerwdavis-drinktank-eaythtrsw6k.ws-eu104.gitpod.io', 'drink-tank-f365b9a8022a.herokuapp.com',]
 
 
 # Application definition
@@ -95,6 +95,7 @@ WSGI_APPLICATION = 'Drink_Tank.wsgi.application'
 #}
 
 DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
 
 
 # Password validation
