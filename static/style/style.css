@@ -1,0 +1,73 @@
+body {
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+.callout-container {
+  max-width: 100%; 
+  overflow-x: hidden; 
+  height: 100vh;
+  background: url('/static/style/media/sour.jpg') no-repeat bottom right fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jumbotron {
+  
+  background-color: transparent;
+  color: whitesmoke;
+  font-weight: bold;
+  padding: 50px; 
+  text-align: center; 
+}
+
+.jumbotron-header {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.jumbotron small {
+  font-size: 60%;
+  font-style: italic;
+  color: #d0d0d0;
+}
+
+
+.quote-container {
+  max-width: 100%; 
+  overflow-wrap: break-word;
+  padding: 20px;
+}
+
+
+.features-container {
+  max-width: 100%;
+  overflow-wrap: break-word; 
+  padding: 20px;
+}
+
+
+.block-divider {
+  width: 75px;
+  height: 5px;
+  border: 0;
+  color: orange;
+  margin: 20px auto; 
+}
+
+
+.favourites {
+  max-width: 100%;
+  overflow-wrap: break-word; 
+  padding: 20px; 
+}
+
+
+@media (max-width: 576px) {
+  .jumbotron {
+    padding: 30px; 
+  }
+}
