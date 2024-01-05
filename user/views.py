@@ -4,6 +4,13 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView, UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.contrib.auth.views import (
+    LoginView as BaseLoginView,
+    LogoutView as BaseLogoutView,
+    PasswordChangeView as BasePasswordChangeView,
+    PasswordResetView as BasePasswordResetView,
+    PasswordResetConfirmView as BasePasswordResetConfirmView,
+)
 
 from .models import Profile
 from .forms import ProfileForm
@@ -37,7 +44,31 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class SignUpView(CreateView):
-    
     form_class = UserCreationForm
-    template_name = 'your_custom_signup_template.html'
+    template_name = 'signup.html'
     success_url = reverse_lazy('login')
+
+
+class LoginView(BaseLoginView):
+    template_name = 'login.html'
+
+
+class LogoutView(BaseLogoutView):
+    template_name = 'logout.html'
+
+
+class PasswordChangeView(BasePasswordChangeView):
+    template_name = 'changepass.html'
+    success_url = reverse_lazy('password_change_done')
+
+
+class PasswordResetView(BasePasswordResetView):
+    template_name = 'setpass.html'
+    email_template_name = 'registration/password_reset_email.html'
+    subject_template_name = 'registration/password_reset_subject.txt'
+    success_url = reverse_lazy('password_reset_done')
+
+
+class PasswordResetConfirmView(BasePasswordResetConfirmView):
+    template_name = 'registration/password_reset_confirm.html'
+    success_url = reverse_lazy('password_reset_complete')
