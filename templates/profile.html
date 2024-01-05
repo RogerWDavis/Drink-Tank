@@ -15,7 +15,7 @@
             {% endif %}
         </div>
         <div class="profile-recipes">
-            <h2 class="text-center pb-4">Latest Recipes</h2>
+            <h2 class="text-center pb-4">Recipes</h2>
             {% for recipe in profile.user.recipe_owner.all %}
             <a href="{% url 'recipe_detail' recipe.id %}">
                 <h3>{{ recipe.title }}</h3>
