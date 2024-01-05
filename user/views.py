@@ -1,3 +1,7 @@
+
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView, UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
@@ -30,3 +34,10 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+
+class SignUpView(CreateView):
+    
+    form_class = UserCreationForm
+    template_name = 'your_custom_signup_template.html'
+    success_url = reverse_lazy('login')

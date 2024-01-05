@@ -1,3 +1,4 @@
+from django.views.generic import TemplateView
 from django.views.generic import (
     CreateView, ListView,
     DetailView, DeleteView,
@@ -13,7 +14,7 @@ from .forms import RecipeForm
 
 class Recipes(ListView):
 
-    template_name = "index.html"
+    template_name = "recipes.html"
     model = Recipe
     context_object_name = "recipes"
 
@@ -54,3 +55,7 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+class HomeView(TemplateView):
+   
+    template_name = 'index.html'
