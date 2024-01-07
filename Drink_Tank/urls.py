@@ -1,4 +1,4 @@
-from django.contrib.auth.views import LoginView, LogoutView
+from allauth.account.views import LoginView, LogoutView
 from django.contrib import admin
 from django.urls import path, include
 from recipes.views import (
@@ -8,6 +8,7 @@ from user.views import (Profiles, EditProfile, SignUpView, LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path("", HomeView.as_view(), name="home"),
     path("recipes/", Recipes.as_view(), name="recipes"),
     path("user/<slug:pk>/", Profiles.as_view(), name="profile"),
@@ -22,6 +23,5 @@ urlpatterns = [
     path("recipes/add/", AddRecipe.as_view(), name="add_recipe"),
     path("recipes/delete/<int:pk>/", DeleteRecipe.as_view(), name="delete_recipe"),  
     path("recipes/edit/<int:pk>/", EditRecipe.as_view(), name="edit_recipe"),  
-    path("user/<slug:pk>/", Profiles.as_view(), name="profile"),
-    path("edit-profile/<slug:pk>/", EditProfile.as_view(), name="edit_profile"),
+
 ]

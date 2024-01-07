@@ -58,4 +58,6 @@ class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class HomeView(TemplateView):
    
-    template_name = 'index.html'
+    template_name = 'home.html'
+
+

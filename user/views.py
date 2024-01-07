@@ -1,4 +1,5 @@
 
+from allauth.account.views import LoginView as BaseLoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
@@ -15,13 +16,16 @@ from django.contrib.auth.views import (
 from .models import Profile
 from .forms import ProfileForm
 
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
+
 
 class Profiles(TemplateView):
 
     template_name = "profile.html"
 
     def get_context_data(self, **kwargs):
-        profile = Profile.objects.get(user=self.kwargs["pk"])
+        profile = get_object_or_404(Profile, user=self.kwargs["pk"])
         context = {
             "profile": profile,
             'form': ProfileForm(instance=profile)
@@ -51,6 +55,10 @@ class SignUpView(CreateView):
 
 class LoginView(BaseLoginView):
     template_name = 'login.html'
+
+    def get_success_url(self):
+    
+        return reverse('profile', kwargs={'pk': self.request.user.pk})
 
 
 class LogoutView(BaseLogoutView):
