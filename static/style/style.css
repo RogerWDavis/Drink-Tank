@@ -3,6 +3,26 @@ body {
   overflow-x: hidden;
 }
 
+.american {
+  background-image: url('static/style/media/awhiskey.jpg');
+
+}
+
+.irish {
+  background-image: url('static/style/media/iwhiskey.jpg');
+
+}
+
+.scotish {
+  background-image: url('static/style/media/swhiskey.jpg');
+ 
+}
+
+.japanese {
+  background-image: url('static/style/media/japanese.jpg');
+
+}
+
 .callout-container {
   max-width: 100%; 
   overflow-x: hidden; 
@@ -34,6 +54,8 @@ body {
   font-style: italic;
   color: #d0d0d0;
 }
+
+
 
 
 .quote-container {

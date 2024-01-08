@@ -15,10 +15,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Whiskeys</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Irish</a>
-                        <a class="dropdown-item" href="#">Scotch</a>
-                        <a class="dropdown-item" href="#">Japanese</a>
-                        <a class="dropdown-item" href="#">American</a>
+                        <a class="dropdown-item" href="{% url 'iwhiskey' %}">Irish</a>
+                        <a class="dropdown-item" href="{% url 'swhiskey' %}">Scotch</a>
+                        <a class="dropdown-item" href="{% url 'jwhiskey' %}#">Japanese</a>
+                        <a class="dropdown-item" href="{% url 'awhiskey' %}">American</a>
                     </div>
                 </li>
                 {% if user.is_authenticated %}
@@ -32,6 +32,11 @@
 
         <div class="d-none d-md-block">
             <p class="navbar-text my-auto mr-2"><i>Great whiskey sours delivered to your door.</i></p>
+            {% if user.is_authenticated %}
+                <a class="active nav-item mr-2" href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+                <a class="active nav-item mr-2" href="{% url 'login' %}">Log In/Sign Up</a>
+            {% endif %}
         </div>
     </nav>
 </header>

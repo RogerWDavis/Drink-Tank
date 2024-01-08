@@ -15,23 +15,29 @@ from django.contrib.auth.views import (
 
 from .models import Profile
 from .forms import ProfileForm
+from django.contrib.auth import authenticate, login
 
 from django.shortcuts import get_object_or_404
+from django.views.generic.edit import CreateView
 from django.urls import reverse
 
 
-class Profiles(TemplateView):
+from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView
+from .models import Profile
 
+class Profiles(TemplateView):
     template_name = "profile.html"
 
     def get_context_data(self, **kwargs):
-        profile = get_object_or_404(Profile, user=self.kwargs["pk"])
+        user_id = self.kwargs["pk"]
+        profile = get_object_or_404(Profile, user__id=user_id)
         context = {
             "profile": profile,
             'form': ProfileForm(instance=profile)
         }
-
         return context
+
 
 
 class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -50,7 +56,19 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = 'signup.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        
+
+        username = form.cleaned_data.get('username')
+        raw_password = form.cleaned_data.get('password1')
+        user = authenticate(self.request, username=form.cleaned_data['username'], password=form.cleaned_data['password1'])
+        login(self.request, user)
+
+        
+        return response
 
 
 class LoginView(BaseLoginView):

@@ -5,20 +5,18 @@
 {% block content %} 
     <div class="container">
         <div class="recipe-info mt-3 p-1">
-            <div class="recipe-img">
+            <div class="recipe-detail">
+                
+                <h1 class="text-center">{{ recipe.title }}</h1>
                 <img src="{{ recipe.image.url }}" alt="{{ recipe.image_alt }}" class="recipe-pic">
-            </div>
-            <div class="recipe-container">
+                <p>{{recipe.content}}</p>
                 <div class="ingredients p-3">
                     <h2>Ingredients</h2>
                     <p>{{ recipe.ingredients|safe }}</p>
                 </div>
-            </div>
-            <div class="recipe-detail">
-                <h1 class="text-center">{{ recipe.title }}</h1>
                 <p class="text-center">Posted by {{recipe.user}} on {{recipe.created_on}}</p>
                 <hr>
-                <p>{{recipe.description}}</p>
+                
 
                 {% if request.user == recipe.user %} 
                 <div class="text-center">

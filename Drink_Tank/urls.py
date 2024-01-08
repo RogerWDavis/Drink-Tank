@@ -2,7 +2,11 @@ from allauth.account.views import LoginView, LogoutView
 from django.contrib import admin
 from django.urls import path, include
 from recipes.views import (
-    AddRecipe, Recipes, RecipeDetail, DeleteRecipe, EditRecipe, HomeView
+    american_whiskey_article,
+    irish_whiskey_article,
+    japanese_whiskey_article,
+    scotch_whiskey_article,
+    AddRecipe, Recipes, RecipeDetail, DeleteRecipe, EditRecipe, HomeView,
 )
 from user.views import (Profiles, EditProfile, SignUpView, LoginView, LogoutView, PasswordChangeView, PasswordResetView, PasswordResetConfirmView)
 
@@ -22,6 +26,10 @@ urlpatterns = [
     path("recipes/<int:pk>/", RecipeDetail.as_view(), name="recipe_detail"), 
     path("recipes/add/", AddRecipe.as_view(), name="add_recipe"),
     path("recipes/delete/<int:pk>/", DeleteRecipe.as_view(), name="delete_recipe"),  
-    path("recipes/edit/<int:pk>/", EditRecipe.as_view(), name="edit_recipe"),  
+    path("recipes/edit/<int:pk>/", EditRecipe.as_view(), name="edit_recipe"),
+    path('american-whiskey/', american_whiskey_article, name='awhiskey'),
+    path('irish-whiskey/', irish_whiskey_article, name='iwhiskey'),
+    path('japanese-whiskey/', japanese_whiskey_article, name='jwhiskey'),
+    path('scotch-whiskey/', scotch_whiskey_article, name='swhiskey'),  
 
 ]

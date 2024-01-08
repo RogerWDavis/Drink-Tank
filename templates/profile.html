@@ -9,7 +9,6 @@
         <div class="info">
             <h1>{{ profile.user.username }}</h1>
             <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
-            <p><strong>Recipes: </strong>{{ profile.user.recipe_owner.count }}</p>
             {% if profile.bio is not none %}
                 {{ profile.bio|safe }}
             {% endif %}
@@ -29,7 +28,6 @@
     {% if request.user == profile.user %}
         <!-- The Modal -->
         <div id="myModal" class="modal mt-5">
-            <!-- Modal content -->
             <div class="modal-content container">
                 <span class="close fs-1 pe-2">&times;</span>
                 <form method="POST" action="{% url 'edit_profile' request.user.id %}" class="mb-2 p-2"
