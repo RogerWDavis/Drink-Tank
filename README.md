@@ -397,7 +397,7 @@ Scroll down to Manual deploy and choose the main branch
 Click deploy
 The app should now be deployed.
 
-The live link can be found :[here](https://drink-tank-f365b9a8022a.herokuapp.com//) Live Site
+The live link can be found :[here](https://drink-tank-f365b9a8022a.herokuapp.com/) Live Site
 
 Run Locally
 Navigate to the GitHub Repository you want to clone to use locally:
