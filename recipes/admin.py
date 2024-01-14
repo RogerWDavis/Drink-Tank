@@ -6,7 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Recipe)
 class RecipeAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content')
+    summernote_fields = '__all__'
 
     def approve_recipe(self, request, queryset):
         queryset.update(approved=True)

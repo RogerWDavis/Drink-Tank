@@ -1,75 +1,64 @@
-from django.views.generic import TemplateView
-from django.views.generic import (
-    CreateView, ListView,
-    DetailView, DeleteView,
-    UpdateView
-)
-
-from django.contrib.auth.mixins import (
-    UserPassesTestMixin, LoginRequiredMixin
-)
-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Recipe
 from .forms import RecipeForm
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import get_object_or_404
 
 class Recipes(ListView):
-
-    template_name = "recipes.html"
     model = Recipe
-    context_object_name = "recipes"
-
-    def get_queryset(self):
-        return self.model.objects.all()
+    template_name = 'recipes.html'
+    context_object_name = 'recipes'
 
 class RecipeDetail(DetailView):
-
-    template_name = "recipes_detail.html"
     model = Recipe
-    context_object_name = "recipe"
+    template_name = 'recipes_detail.html'
+    context_object_name = 'recipe'
 
 class AddRecipe(LoginRequiredMixin, CreateView):
     model = Recipe
+    form_class = RecipeForm
     template_name = 'add_recipe.html'
-    fields = ['title', 'ingredients', 'content', 'image']
-    success_url = reverse_lazy('recipes')
 
     def form_valid(self, form):
-        form.instance.author = self.request.user  
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
+    def get_success_url(self):
+        return reverse_lazy('profile', kwargs={'pk': self.request.user.pk}) 
+
 class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
- 
-    template_name = 'edit_recipe.html'
     model = Recipe
     form_class = RecipeForm
-    success_url = '/recipes/'
-    
+    template_name = 'edit_recipe.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
     def test_func(self):
-        return self.request.user == self.get_object().user
+        return self.request.user == self.get_object().author
+
+    def get_success_url(self):
+        return reverse_lazy('profile', kwargs={'pk': self.request.user.pk}) 
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
- 
     model = Recipe
-    success_url = '/recipes/'
+    template_name = 'confirm_delete.html'
+    success_url = reverse_lazy('recipes')
 
     def test_func(self):
-        return self.request.user == self.get_object().user
-
-class HomeView(TemplateView):
-   
-    template_name = 'home.html'
-
+        return self.request.user == self.get_object().author
 
 def american_whiskey_article(request):
-     return render(request, 'awhiskey.html', {'whiskey_type': 'american'})
+    return render(request, 'awhiskey.html')
 
 def irish_whiskey_article(request):
-    return render(request, 'iwhiskey.html', {'whiskey_type': 'irish'}  )
+    return render(request, 'iwhiskey.html')
 
 def japanese_whiskey_article(request):
-    return render(request, 'jwhiskey.html', {'whiskey_type': 'japanese'} )
+    return render(request, 'jwhiskey.html')
 
 def scotch_whiskey_article(request):
-    return render(request, 'swhiskey.html', {'whiskey_type': 'scotch'} )
+    return render(request, 'swhiskey.html')

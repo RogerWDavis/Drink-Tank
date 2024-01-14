@@ -13,12 +13,12 @@ class Recipe(models.Model):
     ingredients = models.TextField(max_length=250, default='')
     content = models.TextField()
     image = models.ImageField(upload_to='ad_pictures', default='')
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="Recipe")
-    featured_image = CloudinaryField('image', default='placeholder')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="recipes")
+    featured_image = models.ImageField(upload_to='featured_images/', default='placeholder')
     excerpt = models.TextField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=((0, "Draft"), (1, "Published")), default=0)
     likes = models.ManyToManyField(User, related_name='recipe_likes', blank=True)
     
     class Meta:

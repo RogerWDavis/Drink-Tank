@@ -17,26 +17,29 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{% url 'iwhiskey' %}">Irish</a>
                         <a class="dropdown-item" href="{% url 'swhiskey' %}">Scotch</a>
-                        <a class="dropdown-item" href="{% url 'jwhiskey' %}#">Japanese</a>
+                        <a class="dropdown-item" href="{% url 'jwhiskey' %}">Japanese</a>
                         <a class="dropdown-item" href="{% url 'awhiskey' %}">American</a>
                     </div>
                 </li>
-                {% if user.is_authenticated %}
+            </ul>
+
+            <div class="d-none d-md-block">
+                <p class="navbar-text my-auto mr-2"><i>Great whiskey sours delivered to your door.</i></p>
+            </div>
+
+            {% if user.is_authenticated %}
+                <ul class="navbar-nav">
                     <li class="nav-item mr-2"><a class="nav-link" href="{% url 'profile' user.pk %}">My Profile</a></li>
                     <li class="nav-item mr-2"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'login' %}">Sign In/Sign Up</a></li>
-                {% endif %}
-            </ul>
-        </div>
-
-        <div class="d-none d-md-block">
-            <p class="navbar-text my-auto mr-2"><i>Great whiskey sours delivered to your door.</i></p>
-            {% if user.is_authenticated %}
-                <a class="active nav-item mr-2" href="{% url 'logout' %}">Log Out</a>
+                </ul>
             {% else %}
-                <a class="active nav-item mr-2" href="{% url 'login' %}">Log In/Sign Up</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item mr-2"><a class="nav-link" href="{% url 'login' %}">Sign In</a></li>
+                    <li class="nav-item mr-2"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li>
+                </ul>
             {% endif %}
         </div>
+
+        
     </nav>
 </header>

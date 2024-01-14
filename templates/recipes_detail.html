@@ -16,8 +16,6 @@
                 </div>
                 <p class="text-center">Posted by {{recipe.user}} on {{recipe.created_on}}</p>
                 <hr>
-                
-
                 {% if request.user == recipe.user %} 
                 <div class="text-center">
                     <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-primary w-25">Edit</a>

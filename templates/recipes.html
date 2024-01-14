@@ -1,22 +1,29 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
-{% block title %}Recipes{% endblock %}
+{% block title %}Recipes - {{recipe.title}}{% endblock %}
 
-{% block content %} 
+{% block content %}
+
 <h1 class="text-center p-2 d-block">
-Recipes
+    Recipes
 </h1>
+
 <div class="container d-flex flex-row flex-wrap justify-content-center">
-    {% for recipe in recipes %} 
-    <a href="{% url 'recipe_detail' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3" style="width: 18rem;">
-            <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_alt}}">
-            <div class="card-body">
-              <h2 class="card-title">{{recipe.title}}</h2>
-              <p class="card-text">{{recipe.content|truncatechars:100}}</p>
+    {% for recipe in recipes %}
+        <a href="{% url 'recipe_detail' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+            <div class="card m-3" style="width: 18rem;">
+                {% if recipe.image and recipe.image.url %}
+                    <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_alt}}">
+                {% else %}
+                    <div class="card-img-top placeholder-image">No Image</div>
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{recipe.title}}</h2>
+                    <p class="card-text">{{recipe.content|truncatechars:100}}</p>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
     {% endfor %}
 </div>
+
 {% endblock %}

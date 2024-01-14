@@ -1,35 +1,51 @@
 {% extends "base.html" %}
-
 {% load i18n %}
 
 {% block title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container text-center">
-  <h1>{% trans "Sign Up" %}</h1>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">{% trans "Sign Up" %}</h1>
 
-  <p>{% trans "Already have an account? Then please" %} <a href="{% url 'login' %}">{% trans "sign in" %}</a>.</p>
+      <form class="form" id="signup_form" method="post" action="{% url 'signup' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+          {{ form.username.label_tag }}
+          {{ form.username }}
+        </div>
+        
+        <div class="mb-3">
+          {{ form.email.label_tag }}
+          {{ form.email }}
+        </div>
+        
+        <div class="mb-3">
+          {{ form.password1.label_tag }}
+          {{ form.password1 }}
+        </div>
+        
+        <div class="mb-3">
+          {{ form.password2.label_tag }}
+          {{ form.password2 }}
+        </div>
 
-  <form class="form p-2" id="signup_form" method="post" action="{% url 'signup' %}">
-    {% csrf_token %}
-    
-    {{ form.username.label_tag }}
-    {{ form.username }}
-    
-    {{ form.email.label_tag }}
-    {{ form.email }}
-    
-    {{ form.password1.label_tag }}
-    {{ form.password1 }}
-    
-    {{ form.password2.label_tag }}
-    {{ form.password2 }}
-    
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    
-    <button type="submit" class="btn btn-primary w-25 mt-2">{% trans "Sign Up" %}</button>
-  </form>
+        <div class="mb-3">
+          {{ form.profile_picture.label_tag }}
+          {{ form.profile_picture }}
+        </div>
+        
+        {% if redirect_field_value %}
+        <input type="hidden" name="home" value="{{ home }}" />
+        {% endif %}
+        
+        <button type="submit" class="btn btn-primary w-100 mt-3">{% trans "Sign Up" %}</button>
+      </form>
+
+      <p class="mt-3 text-center">{% trans "Already have an account? Then please" %} <a href="{% url 'login' %}">{% trans "sign in" %}</a>.</p>
+    </div>
+  </div>
 </div>
 {% endblock %}

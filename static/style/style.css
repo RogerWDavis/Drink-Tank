@@ -3,30 +3,85 @@ body {
   overflow-x: hidden;
 }
 
+
 .american {
-  background-image: url('static/style/media/awhiskey.jpg');
 
-}
-
-.irish {
-  background-image: url('static/style/media/iwhiskey.jpg');
-
-}
-
-.scotish {
-  background-image: url('static/style/media/swhiskey.jpg');
- 
-}
-
-.japanese {
-  background-image: url('static/style/media/japanese.jpg');
-
-}
-
-.callout-container {
   max-width: 100%; 
   overflow-x: hidden; 
   height: 100vh;
+  background-image: url('media/awhiskey.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+}
+
+.irish {
+
+  max-width: 100%; 
+  overflow-x: hidden; 
+  height: 100vh;
+  background-image: url('media/iwhiskey.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+}
+
+.scotch {
+
+  max-width: 100%; 
+  overflow-x: hidden; 
+  height: 100vh;
+  background-image: url('media/swhiskey.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+}
+
+.japanese {
+
+  max-width: 100%; 
+  overflow-x: hidden; 
+  height: 100vh;
+  background-image: url('media/japanese.jpg') ;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+}
+
+
+.callout-container {
+  max-width: 100% !important; 
+  overflow-x: hidden; 
+  height: 100vh;
+  width:100vw !important;
   background: url('/static/style/media/sour.jpg') no-repeat bottom right fixed;
   background-size: cover;
   display: flex;
@@ -34,13 +89,16 @@ body {
   justify-content: center;
 }
 
+
 .jumbotron {
   
   background-color: transparent;
   color: whitesmoke;
-  font-weight: bold;
-  padding: 50px; 
+  font-weight: bold; 
   text-align: center; 
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .jumbotron-header {
@@ -54,7 +112,6 @@ body {
   font-style: italic;
   color: #d0d0d0;
 }
-
 
 
 

@@ -10,11 +10,10 @@ class RecipeForm(forms.ModelForm):
             "title",
             "content",
             "ingredients",
+            'image',
         ]
 
-        ingredients = forms.CharField()
-
-        widget = {
+        widgets = {
             "content": forms.Textarea(),
         }
 
@@ -22,4 +21,5 @@ class RecipeForm(forms.ModelForm):
             "title": "Recipe Title",
             "content": "Content",
             "ingredients": "Recipe Ingredients",
+            'image': 'recipe image'
         }

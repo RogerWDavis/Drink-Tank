@@ -4,46 +4,45 @@
 {% block title %}Profile - {{ profile.user.username }}{% endblock %}
 
 {% block content %}
-<div class="container p-4">
-    <div class="profile">
-        <div class="info">
-            <h1>{{ profile.user.username }}</h1>
-            <p><strong>Joined: </strong>{{ profile.user.date_joined|date:'d M Y' }}</p>
-            {% if profile.bio is not none %}
-                {{ profile.bio|safe }}
-            {% endif %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% if profile.image %}{{ profile.image.url }}{% else %}{% static 'path/to/default/image.jpg' %}{% endif %}" class="card-img-top" alt="{{ profile.user.username }}'s Profile Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ profile.user.username }}</h5>
+                    <p class="card-text"><strong>Joined:</strong> {{ profile.user.date_joined|date:'d M Y' }}</p>
+                    {% if profile.bio %}
+                        <p class="card-text">{{ profile.bio|safe }}</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-        <div class="profile-recipes">
-            <h2 class="text-center pb-4">Recipes</h2>
-            {% for recipe in profile.user.recipe_owner.all %}
-                <a href="{% url 'recipe_detail' recipe.id %}">
-                    <h3>{{ recipe.title }}</h3>
-                </a>
-                {{ recipe.posted_date }}
-                <hr>
+        <div class="col-md-8">
+            <h2 class="mb-4">My Recipes</h2>
+            {% for recipe in user_recipes %}
+                <div class="card mb-3">
+                    <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.title }}</h5>
+                        <p class="card-text">{{ recipe.ingredients }}</p>
+                        <p class="card-text">{{ recipe.content }}</p>
+                        <p class="card-text"><small class="text-muted">{{ recipe.posted_date }}</small></p>
+                        {% if request.user == recipe.author %}
+                            <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-primary">Edit</a>
+                            <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger">Delete</a>
+                        {% endif %}
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
 
     {% if request.user == profile.user %}
-        <!-- The Modal -->
-        <div id="myModal" class="modal mt-5">
-            <div class="modal-content container">
-                <span class="close fs-1 pe-2">&times;</span>
-                <form method="POST" action="{% url 'edit_profile' request.user.id %}" class="mb-2 p-2"
-                    enctype="multipart/form-data">
-                    <h2 class="text-center fs-4">Edit Profile</h2>
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    {{ form.media }}
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary w-25">Edit</button>
-                    </div>
-                </form>
-            </div>
+        <div class="mt-4">
+            <a href="{% url 'add_recipe' %}" class="btn btn-success">Add Recipe</a>
+            <a href="{% url 'editprofile' profile.user.pk %}" class="btn btn-primary">Edit Profile</a>
         </div>
-        <!-- Add Recipe Link -->
-        <a href="{% url 'add_recipe' %}" class="btn btn-success">Add Recipe</a>
     {% endif %}
 </div>
 {% endblock %}

@@ -20,11 +20,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '8000-rogerwdavis-drinktank-7jo8aolsn43.ws-us107.gitpod.io',
+ALLOWED_HOSTS = [ '8000-rogerwdavis-drinktank-7jo8aolsn43.ws-us107.gitpod.io', '8000-rogerwdavis-drinktank-7jo8aolsn43.ws-eu107.gitpod.io',
     'drink-tank-f365b9a8022a.herokuapp.com',]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-rogerwdavis-drinktank-7jo8aolsn43.ws-us107.gitpod.io",
+    'https://8000-rogerwdavis-drinktank-7jo8aolsn43.ws-eu107.gitpod.io'
 ]
 
 # Application definition
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'recipes',
     'user',
-    
+    'django.contrib.sites',
 
 ]
 
@@ -116,12 +117,12 @@ WSGI_APPLICATION = 'Drink_Tank.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': BASE_DIR / 'db.sqlite3',
-   }
-}
+#DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': BASE_DIR / 'db.sqlite3',
+#   }
+#}
 
 DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
