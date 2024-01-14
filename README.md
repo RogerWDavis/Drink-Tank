@@ -45,7 +45,7 @@ All projects were assigned to epics, prioritized under the labels, Must have, sh
 
 The Kanban board was created using github projects and can be located here and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
 
-![kanban board](media/kanban.PNG)
+![kanban board](static/style/media/kanban.PNG)
 
 #### Epics
 The project had 7 main Epics (milestones):
@@ -252,18 +252,18 @@ User Story: As a **site user** I can **like and unlike content** so as to **inte
 
 #### Wireframes
 
-![Wireframe](media/wirepage1.PNG)
-![Wireframe](media/wirepage2.PNG)
-![Wireframe](media/wirepage4.PNG)
-![Wireframe](media/wirepage5.PNG)
-![Wireframe](media/wirepage6.PNG)
+![Wireframe](static/style/media/wirepage1.PNG)
+![Wireframe](static/style/media/wirepage2.PNG)
+![Wireframe](static/style/media/wirepage4.PNG)
+![Wireframe](static/style/media/wirepage5.PNG)
+![Wireframe](static/style/media/wirepage6.PNG)
 
 
 #### Database-Design
 
 The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the heart of the application.
 
-![kanban board](media/erd.pgn.PNG)
+![kanban board](static/style/media/erd.pgn.PNG)
 
 #### Security
 
