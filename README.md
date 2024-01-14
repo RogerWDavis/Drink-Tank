@@ -32,8 +32,6 @@ Famous Whiskey Drop is a fictional recipe sharing site that allows bartenders an
  * Deployment
    * Version Control
    * Heroku Deployment
-   * Run Locally
-   * Fork Project
  * Credits
 
  ## User Experience Design
@@ -127,13 +125,13 @@ As a developer, I need to deploy the project to heroku so that it is live for cu
 * Restricted role based features
 * Home page with basic site information
 
-### The Structure Plane
+## The Structure Plane
 
-#### Features
+### Features
 
 User Story: As a **site user** I can **view a paginated list of recipes** so as to **pick which recipe I wish to view**
 
-# Acceptance Criteria
+### Acceptance Criteria
 * Recipes clearly displayed on landing page
 * Clicking on a recipe opens it on a dedicated page
 
@@ -146,7 +144,7 @@ User Story: As a **site user** I can **view a paginated list of recipes** so as 
 
 User Story: As a **site admin** I can **create, update and delete recipes** so as to **manage site content**
 
-# Acceptance Criteria
+### Acceptance Criteria
 * Site admin user creation
 * Site admin functionality
 
@@ -159,7 +157,7 @@ User Story: As a **site admin** I can **create, update and delete recipes** so a
 
 User Story: As a **site user** I can **view a recipe list** so as to **select a recipe to view**
 
-# Acceptance Criteria
+### Acceptance Criteria
 * Viewer can go from landing page to recipe list page
 * Recipes displayed asthetically on page
 
@@ -172,7 +170,7 @@ User Story: As a **site user** I can **view a recipe list** so as to **select a 
 
 User Story: As a **site user** I can **create, update and delete recipes** so as to **interact with community**
 
-# Acceptance Criteria
+### Acceptance Criteria
 * User can create recipes
 * User can edit recipes
 * User can delete recipes
@@ -184,7 +182,7 @@ User Story: As a **site user** I can **create, update and delete recipes** so as
 
 User Story: As a **site user** I can **create an account** so as to **create, update and delete recipes**
 
-# Acceptance Criteria
+### Acceptance Criteria
 * User can login and log out
 * User can create, update and delete recipes
 
@@ -199,7 +197,7 @@ User Story: As a **site user** I can **create an account** so as to **create, up
 
 User Story: As a **site user** I can **open a recipe** so as to **view it in detail**
 
-# Acceptance Criteria
+### Acceptance Criteria
 * Clicking a recipe opens a dedicated page
 * Details displayed asthetically
 
@@ -209,9 +207,9 @@ User Story: As a **site user** I can **open a recipe** so as to **view it in det
 - [ ] Create Url
 
 
-### The Skeleton Plane
+## The Skeleton Plane
 
-#### Wireframes
+### Wireframes
 
 ![Wireframe](static/style/media/wirepage1.PNG)
 ![Wireframe](static/style/media/wirepage2.PNG)
@@ -220,20 +218,39 @@ User Story: As a **site user** I can **open a recipe** so as to **view it in det
 ![Wireframe](static/style/media/wirepage6.PNG)
 
 
-#### Database-Design
+### Database-Design
 
 The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the heart of the application.
 
 ![kanban board](static/style/media/erd.pgn.PNG)
 
-#### Security
+### Security
 
 Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any user restricted functionality, user edit/delete functionality listed in the features was secured using this method.
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
 
+## The Surface Plane
 
-#### Technolgies
+### Design
+
+The design philosophy of Drink Tank is characterized by cleanliness, elegance, and minimalism. The primary focus is on presenting recipe cards prominently, providing users with a straightforward and visually appealing interface. Profiles take a secondary role, ensuring a user-friendly and uncluttered experience.
+
+### Colour Scheme
+
+Drink Tank employs a consistent and harmonious color scheme throughout the application. The chosen colors are carefully selected to complement each other, creating a visually pleasing environment. The color palette reflects the sophistication and richness associated with the world of whiskey.
+
+### Typography
+
+Consistency in typography is a key aspect of Drink Tank's design. The choice of fonts contributes to the overall aesthetic appeal and readability of the content. Fonts are selected to align with the elegant and refined theme of the application.
+
+### Imagery
+
+The imagery used in Drink Tank is curated to evoke a sense of quality and class, mirroring the essence of the whiskey culture. From the background images to the profile pictures, the visuals are chosen to enhance the overall user experience and convey a premium atmosphere.
+
+The combination of design, color scheme, typography, and imagery collectively contributes to the surface plane of Drink Tank, creating an interface that is both aesthetically pleasing and user-focused.
+
+### Technolgies
 * HTML
   * The structure of the Website was developed using HTML as the main language.
 * CSS
@@ -253,6 +270,73 @@ Environment variables were stored in an env.py for local development for securit
 * balsamiq
   * wireframes were created using balsamiq from https://balsamiq.com/wireframes/desktop/#
 * Python Modules Used
+
+
+### Manual Testing System
+
+To ensure the proper functionality of the application, perform the following manual tests:
+
+#### 1. User Authentication
+
+- **Signup:**
+  1. Navigate to the signup page.
+  2. Fill out the required fields, including a profile picture.
+  3. Submit the form and verify that a new user account is created.
+
+- **Login:**
+  1. Access the login page.
+  2. Enter valid credentials and click the login button.
+  3. Confirm that the user is redirected to their profile page.
+
+- **Profile Editing:**
+  1. Log in as an existing user.
+  2. Access the profile editing page.
+  3. Modify the user's information and profile picture.
+  4. Save changes and verify that the updated details are reflected on the profile page.
+
+#### 2. Recipe Management
+
+- **Add Recipe:**
+  1. Log in as a user.
+  2. Navigate to the "Add Recipe" page.
+  3. Fill out the required fields for a new recipe.
+  4. Confirm that the recipe is added to the user's profile.
+
+- **Edit Recipe:**
+  1. Log in as the recipe owner.
+  2. Access the recipe editing page.
+  3. Make changes to the recipe details.
+  4. Save changes and verify that the modifications are visible.
+
+- **Delete Recipe:**
+  1. Log in as the recipe owner.
+  2. Access the recipe deletion page.
+  3. Confirm the deletion and check that the recipe is removed.
+
+#### 3. Whiskey Articles
+
+- **Read Articles:**
+  1. Explore the different whiskey articles on the site.
+  2. Confirm that articles are displayed correctly with relevant content.
+
+#### 4. Responsive Design
+
+- **Mobile Responsiveness:**
+  1. Access the application from various devices (phone, tablet, desktop).
+  2. Confirm that the layout adjusts appropriately for each screen size.
+
+#### 5. Image Upload
+
+- **Profile Picture Upload:**
+  1. During signup, upload a profile picture.
+  2. Verify that the image is saved and displayed on the user's profile.
+
+#### 6. Static Content
+
+- **Home Page Content:**
+  1. Check that static content (quotes, features) is displayed correctly on the home page.
+
+Use these manual tests to ensure the proper functioning and user experience of the application.
 
 #### Python Modules Used
 * Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used for the classes to create, read, update and delete
