@@ -9,7 +9,7 @@ body {
   max-width: 100%; 
   overflow-x: hidden; 
   height: 100vh;
-  background-image: url('media/awhiskey.jpg');
+  background-image: url('https://res.cloudinary.com/df7ixo6zy/image/upload/v1704733832/static/style/media/awhiskey.e2944188e9d4.jpg');
   background-size: cover;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@ body {
   max-width: 100%; 
   overflow-x: hidden; 
   height: 100vh;
-  background-image: url('media/iwhiskey.jpg');
+  background-image: url('https://res.cloudinary.com/df7ixo6zy/image/upload/v1704733833/static/style/media/iwhiskey.a73c3ff53680.jpg');
   background-size: cover;
   display: flex;
   align-items: center;
@@ -45,7 +45,7 @@ body {
   max-width: 100%; 
   overflow-x: hidden; 
   height: 100vh;
-  background-image: url('media/swhiskey.jpg');
+  background-image: url('https://res.cloudinary.com/df7ixo6zy/image/upload/v1704899885/static/style/media/swhiskey.6f369ade0a45.jpg');
   background-size: cover;
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@ body {
   max-width: 100%; 
   overflow-x: hidden; 
   height: 100vh;
-  background-image: url('media/japanese.jpg') ;
+  background-image: url('https://res.cloudinary.com/df7ixo6zy/image/upload/v1704733834/static/style/media/japanese.832d316861d2.jpg') ;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@ body {
   overflow-x: hidden; 
   height: 100vh;
   width:100vw !important;
-  background: url('/static/style/media/sour.jpg') no-repeat bottom right fixed;
+  background: url('https://res.cloudinary.com/df7ixo6zy/image/upload/v1704401763/static/style/media/sour.cf5f67769458.jpg') no-repeat bottom right fixed;
   background-size: cover;
   display: flex;
   align-items: center;
