@@ -1,6 +1,10 @@
-# We Love Whiskey
+![Famous Whiskey](static/style/media/famous.PNG)
 
-We Love Whiskey  is a fictional recipe sharing site that allows bartenders and whiskey enthsiasts to join a community and share their best whiskey recioes. It allowy users to browse, like, upload, edit and delete their favorite whiskey recipes. Its simple and easy to use.
+
+# Famous Whiskey Drop
+
+Famous Whiskey Drop is a fictional recipe sharing site that allows bartenders and whiskey enthsiasts to join a community and share their best whiskey recioes. It allowy users to browse, upload, edit and delete their favorite whiskey recipes. Its simple and easy to use.
+
 
 ## Table of Contents
 
@@ -33,6 +37,11 @@ We Love Whiskey  is a fictional recipe sharing site that allows bartenders and w
  * Credits
 
  ## User Experience Design
+
+![kanban board](static/style/media/response1.PNG)
+
+![kanban board](static/style/media/response2.PNG)
+
  ### The Strategy Plane
 
  The site is aimed to help whiskey enthusiasts to easily share whiskey recipes on the website, and find recipes that they may never have tried before.
@@ -135,18 +144,6 @@ User Story: As a **site user** I can **view a paginated list of recipes** so as 
 - [ ] Create model
 
 
-User Story: As a **site user** I can **browse recipes by whiskey sort** so as to **find recipes with my preferred whiskey**
-# Acceptance Criteria
-* Dropdown in navbar with whiskey sorts
-* Landing pages with whiskey recipes according to sort
-
-
-## Tasks
-- [ ] Create views
-- [ ] Create urls
-- [ ] Link to homepage
-
-
 User Story: As a **site admin** I can **create, update and delete recipes** so as to **manage site content**
 
 # Acceptance Criteria
@@ -158,18 +155,6 @@ User Story: As a **site admin** I can **create, update and delete recipes** so a
 - [ ] Create admin user in Django
 - [ ] Create recipes
 - [ ] Edit recipes
-
-
-User Tory: As a **site admin** I can **approve or dissaprove recipes** so as to **filter unwanted or irrelevant content**
-
-# Acceptance Criteria
-* Admin can see user generated content
-* Admin can decide which content is visable to user
-
-## Tasks
-- [ ] First task
-- [ ] Second task
-- [ ] Third task
 
 
 User Story: As a **site user** I can **view a recipe list** so as to **select a recipe to view**
@@ -222,30 +207,6 @@ User Story: As a **site user** I can **open a recipe** so as to **view it in det
 ## Tasks
 - [ ] Create View
 - [ ] Create Url
-
-
-User Story: As a **Site User / Admin** I can **view the number of likes on each post** so as to **see which is the most popular or viral**
-
-# Acceptance Criteria
-* Display # of likes
-
-## Tasks
-- [ ] Create like button
-- [ ] Count likes
-- [ ] Display # of likes asthetically
-
-
-User Story: As a **site user** I can **like and unlike content** so as to **interact with community**
-
-# Acceptance Criteria
-* Like and Unlike button displayed
-* User can interact with buttons
-
-## Tasks
-- [ ] Create Buttons
-- [ ] Count Likes/Unlikes
-- [ ] Display Likes/Unlikes
-
 
 
 ### The Skeleton Plane
@@ -363,3 +324,15 @@ Copy the repository link to the clipboard
 Open your IDE of choice (git must be installed for the next steps)
 Type git clone copied-git-url into the IDE terminal
 The project will now have been cloned on your local machine for use.
+
+### Credits
+
+This project was developed with the help of various resources, tutorials, and documentation. Special thanks to the following:
+
+- [Code Institute](https://codeinstitute.net/) - Learning materials and tutorials, including the "I Think, Therefore I Blog" tutorial.
+- [Django Documentation](https://docs.djangoproject.com/) - Official documentation for the Django web framework.
+- [Liquor.com](https://www.liquor.com/) - Inspiration and reference for whiskey-related content.
+
+Additionally, thanks to the open-source community for their contributions to the tools and libraries used in this project.
+
+
