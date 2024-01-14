@@ -18,7 +18,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [ '8000-rogerwdavis-drinktank-7jo8aolsn43.ws-us107.gitpod.io', '8000-rogerwdavis-drinktank-7jo8aolsn43.ws-eu107.gitpod.io',
     'drink-tank-f365b9a8022a.herokuapp.com',]
